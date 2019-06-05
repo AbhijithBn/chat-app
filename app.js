@@ -15,8 +15,8 @@ app.get('/',function(req,res){
 })
 
 //server
-var server=app.listen(4000,function(){
-    console.log("Server on port 4000");
+var server=app.listen(9000,function(){
+    console.log("Server on port 9000");
 })
 
 //socket setup
@@ -27,6 +27,10 @@ io.on('connection',function(socket){    //here connection is an event
 
     socket.on('chat',function(data){
         io.sockets.emit('chat',data)
+    })
+
+    socket.on('typing',function(data){
+        socket.broadcast.emit('typing',data);
     })
 })
 
