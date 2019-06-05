@@ -7,7 +7,7 @@ app.set('views', __dirname + '/public');
 app.set('view engine','ejs');
 
 //rendering static files like CSS
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views'));
 
 //routing
 app.get('/',function(req,res){
@@ -15,8 +15,8 @@ app.get('/',function(req,res){
 })
 
 //server
-var server=app.listen(9000,function(){
-    console.log("Server on port 9000");
+var server=app.listen(4000,function(){
+    console.log("Server on port 4000");
 })
 
 //socket setup
